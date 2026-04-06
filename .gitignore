@@ -69,3 +69,7 @@ ormlogs.log
 *.sqlite3
 *.db
 *.db3
+.
+
+# Vercel
+.vercel

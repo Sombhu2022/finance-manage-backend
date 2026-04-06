@@ -1,1 +1,6 @@
+#!/bin/bash
+# 1. Run lint and format on staged files
 npx lint-staged
+
+# 2. Run all tests
+npm test
