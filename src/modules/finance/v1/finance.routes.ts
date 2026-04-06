@@ -26,7 +26,7 @@ router.use(protect);
  *         name: type
  *         schema:
  *           type: string
- *           enum: [INCOME, EXPENSE]
+ *           enum: [income , expance]
  *     responses:
  *       200:
  *         description: List of transactions retrieved successfully
