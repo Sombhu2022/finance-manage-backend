@@ -14,13 +14,24 @@ const createApp = (): Application => {
 
   // Swagger Documentation
   const swaggerOptions = {
+    swaggerOptions: {
+      url: '/api-docs.json',
+    },
     customCssUrl:
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css',
     customJs: [
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui-bundle.js',
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui-standalone-preset.js',
     ],
+    customSiteTitle: 'Zorvyn Finance API Docs',
   };
+
+  // Serve the JSON spec
+  app.get('/api-docs.json', (_req: Request, res: Response) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
+  });
+
   app.use(
     '/api-docs',
     swaggerUi.serve,

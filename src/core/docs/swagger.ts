@@ -1,5 +1,6 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import { config } from '../config/index.js';
+import path from 'path';
 
 const options: swaggerJsdoc.Options = {
   definition: {
@@ -39,9 +40,9 @@ const options: swaggerJsdoc.Options = {
     ],
   },
   apis: [
-    './src/modules/**/*.routes.ts',
-    './src/core/api/index.ts',
-    './src/core/app.ts',
+    path.join(process.cwd(), './src/modules/**/*.{ts,js}'),
+    path.join(process.cwd(), './src/core/api/index.{ts,js}'),
+    path.join(process.cwd(), './src/core/app.{ts,js}'),
   ], // Path to the API docs
 };
 
