@@ -15,6 +15,16 @@ const createApp = (): Application => {
   // Swagger Documentation
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+  // Root Welcome Route
+  app.get('/', (_req: Request, res: Response) => {
+    res.status(200).json({
+      status: 'success',
+      message: 'Welcome to Zorvyn Finance API',
+      version: '1.0.0',
+      docs: '/api-docs',
+    });
+  });
+
   // Security Middleware
   app.use(helmet());
 
