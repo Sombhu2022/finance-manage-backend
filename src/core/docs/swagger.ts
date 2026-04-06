@@ -18,6 +18,10 @@ const options: swaggerJsdoc.Options = {
         url: `http://localhost:${config.port}`,
         description: 'Development server',
       },
+      {
+        url: 'https://finance-manage-backend.vercel.app/',
+        description: 'Production server',
+      },
     ],
     components: {
       securitySchemes: {
